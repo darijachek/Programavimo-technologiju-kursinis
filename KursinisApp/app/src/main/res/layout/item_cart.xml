@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/border_bottom"> <LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvCartItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patiekalo pavadinimas"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvCartItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.00€ x 2 = 10.00€"
+        android:textColor="#666666"/>
+</LinearLayout>
+
+    <Button
+        android:id="@+id/btnRemoveItem"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#F44336"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:text="X"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

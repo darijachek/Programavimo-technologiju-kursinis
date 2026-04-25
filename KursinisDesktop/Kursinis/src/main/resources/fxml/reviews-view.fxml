@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="6.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.controllers.ReviewsController">
+    <children>
+        <ToolBar>
+            <Button onAction="#onCreate" text="Sukurti" />
+            <Button onAction="#onUpdate" text="Atnaujinti" />
+            <Button onAction="#onDelete" text="Ištrinti" />
+            <Separator />
+            <TextField fx:id="filterField" promptText="Filtras (komentaras / min įvert.)" />
+            <Button onAction="#onFilter" text="Filtruoti" />
+        </ToolBar>
+
+        <TableView fx:id="table" prefHeight="320.0" />
+
+        <TitledPane expanded="true" text="Forma">
+            <content>
+                <GridPane hgap="8" vgap="8">
+                    <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+
+                    <Label text="Vertinimo tipas" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="targetBox" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Restorano ID" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="restaurantIdField" promptText="pvz. 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Vairuotojo ID" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="driverIdField" promptText="pvz. 5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Kliento ID" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="clientIdField" promptText="pvz. 3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Įvertinimas (1..5)" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <TextField fx:id="ratingField" promptText="5" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                    <Label text="Komentaras" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <TextField fx:id="commentField" promptText="Trumpas komentaras" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+            </content>
+        </TitledPane>
+    </children>
+</VBox>

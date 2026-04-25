@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<SplitPane dividerPositions="0.3" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.controllers.MessagesController" stylesheets="@styles.css">
+    <items>
+        <VBox spacing="5">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Aktyvūs pokalbiai" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <HBox spacing="5">
+                <TextField fx:id="searchField" promptText="Ieškoti pagal ID ar vardą..." HBox.hgrow="ALWAYS"/>
+                <Button text="🔍" onAction="#onSearch"/>
+            </HBox>
+            <ListView fx:id="chatList" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox fx:id="chatArea" spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Žinutės" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <ListView fx:id="messageList" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="messageField" promptText="Rašykite žinutę..." HBox.hgrow="ALWAYS"/>
+                <Button fx:id="sendBtn" text="Siųsti" onAction="#onSend" defaultButton="true" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </items>
+</SplitPane>

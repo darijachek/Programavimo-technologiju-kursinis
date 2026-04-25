@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="6.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.controllers.OrdersController">
+
+    <children>
+
+        <ToolBar>
+            <Button onAction="#onCreate" text="Naujas" />
+            <Button onAction="#onUpdate" text="Atnaujinti" />
+            <Button onAction="#onDelete" text="Ištrinti" />
+            <Separator />
+            <TextField fx:id="filterField" promptText="Filtras" />
+            <Button onAction="#onFilter" text="Filtruoti" />
+        </ToolBar>
+
+        <TableView fx:id="table" prefHeight="286.0" prefWidth="966.0" />
+
+        <TitledPane expanded="true" text="Užsakymo antraštė">
+            <content>
+                <GridPane hgap="8" vgap="8">
+                    <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+
+                    <Label text="Kliento ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="clientIdField" promptText="ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Restorano ID" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="restaurantIdField" promptText="ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Statusas" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="statusField" promptText="NEW" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+            </content>
+        </TitledPane>
+
+        <TitledPane expanded="true" text="Užsakymo eilutės (krepšelis)">
+            <content>
+                <VBox spacing="6.0">
+                    <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+
+                    <ToolBar>
+                        <TextField fx:id="menuItemIdField" promptText="Meniu ID" />
+                        <TextField fx:id="qtyField" promptText="Kiekis" />
+                        <TextField fx:id="qtyUpdateField" promptText="Naujas kiekis" />
+                        <Button onAction="#onAddItem" text="Pridėti prekę" />
+                        <Button onAction="#onUpdateItemQty" text="Atnaujinti kiekį" />
+                        <Button onAction="#onRemoveItem" text="Pašalinti pasirinktą" />
+                        <Separator />
+                        <Label fx:id="totalLabel" text="Suma: 0.00" />
+                    </ToolBar>
+
+                    <TableView fx:id="itemsTable" prefHeight="220.0" />
+                </VBox>
+            </content>
+        </TitledPane>
+
+    </children>
+</VBox>

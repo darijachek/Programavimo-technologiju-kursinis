@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="6.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.controllers.RestaurantsController">
+    <children>
+        <ToolBar>
+            <Button fx:id="newBtn" onAction="#onCreate" text="Sukurti" />
+            <Button fx:id="updateBtn" onAction="#onUpdate" text="Atnaujinti" />
+            <Button fx:id="deleteBtn" onAction="#onDelete" text="Ištrinti" />
+            <Separator />
+            <TextField fx:id="filterField" promptText="Filtras" />
+            <Button onAction="#onFilter" text="Filtruoti" />
+        </ToolBar>
+        <TableView fx:id="table" prefHeight="299.0" prefWidth="616.0" />
+        <TitledPane expanded="true" prefHeight="245.0" prefWidth="616.0" text="Forma">
+            <content>
+                <GridPane hgap="8" prefHeight="171.0" prefWidth="626.0" vgap="8">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+                    <Label text="Pavadinimas" GridPane.rowIndex="3" /><TextField fx:id="nameField" promptText="pvz. Picerija" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label text="Adresas" GridPane.rowIndex="2" /><TextField fx:id="addressField" promptText="adresas" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="Savininko ID" /><TextField fx:id="ownerIdField" promptText="vartotojo ID" GridPane.columnIndex="1" />
+                    <Label text="Aktyvus (true/false)" GridPane.rowIndex="1" /><TextField fx:id="activeField" promptText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+            </content>
+        </TitledPane>
+    </children>
+</VBox>

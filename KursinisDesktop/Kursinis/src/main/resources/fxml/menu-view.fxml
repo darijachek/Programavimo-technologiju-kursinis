@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="6.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.controllers.MenuItemsController">
+    <children>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+            <Label text="Pasirinkite restoraną:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="restaurantBox" prefWidth="250.0"/>
+        </HBox>
+        <ToolBar>
+            <Button fx:id="newBtn" onAction="#onCreate" text="Naujas" />
+            <Button fx:id="updateBtn" onAction="#onUpdate" text="Atnaujinti" />
+            <Button fx:id="deleteBtn" onAction="#onDelete" text="Ištrinti" />
+            <Separator />
+            <TextField fx:id="filterField" promptText="Ieškoti meniu..." />
+            <Button onAction="#onFilter" text="Filtruoti" />
+        </ToolBar>
+
+        <TableView fx:id="table" prefHeight="306.0" VBox.vgrow="ALWAYS" />
+
+        <TitledPane expanded="true" text="Patiekalo Informacija">
+            <content>
+                <GridPane hgap="8" vgap="8">
+                    <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+
+                    <Label text="Pavadinimas" GridPane.rowIndex="0" />
+                    <TextField fx:id="titleField" promptText="pvz. Margarita" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Kategorija" GridPane.rowIndex="1" />
+                    <TextField fx:id="categoryField" promptText="Picos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Kaina (€)" GridPane.rowIndex="2" />
+                    <TextField fx:id="basePriceField" promptText="9.99" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Aprašymas" GridPane.rowIndex="3" />
+                    <TextField fx:id="descriptionField" promptText="Ingredientai..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                </GridPane>
+            </content>
+        </TitledPane>
+    </children>
+</VBox>

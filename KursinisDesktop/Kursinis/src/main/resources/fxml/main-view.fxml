@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.kursinis.controllers.MainController">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Sistema">
+                    <items>
+                        <MenuItem text="Prisijungti prie DB" onAction="#connectDB"/>
+                        <MenuItem text="Atsijungti nuo DB" onAction="#disconnectDB"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Apie" onAction="#about"/>
+                        <MenuItem text="Atsijungti" onAction="#onLogout"/>
+                        <MenuItem text="Išeiti" onAction="#exitApp"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <TabPane fx:id="tabPane">
+            <tabs>
+                <Tab text="Vartotojai" closable="false">
+                    <content>
+                        <fx:include source="users-view.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Restoranai" closable="false">
+                    <content>
+                        <fx:include source="restaurants-view.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Meniu" closable="false">
+                    <content>
+                        <fx:include source="menu-view.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Užsakymai" closable="false">
+                    <content>
+                        <fx:include source="orders-view.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Atsiliepimai" closable="false">
+                    <content>
+                        <fx:include source="reviews-view.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Žinutės" closable="false">
+                    <content><fx:include source="messages-view.fxml"/></content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" text="Neprisijungta prie DB"/>
+    </bottom>
+</BorderPane>
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="6.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.controllers.UsersController">
+    <children>
+        <ToolBar>
+            <Button onAction="#onCreate" text="Naujas" />
+            <Button onAction="#onUpdate" text="Atnaujinti" />
+            <Button onAction="#onDelete" text="Ištrinti" />
+            <Separator />
+            <TextField fx:id="filterField" promptText="Filtras" />
+            <Button onAction="#onFilter" text="Filtruoti" />
+        </ToolBar>
+        <TableView fx:id="table" prefHeight="300.0" />
+        <TitledPane expanded="true" text="Forma">
+            <content>
+                <GridPane hgap="8" prefHeight="274.0" prefWidth="601.0" vgap="8">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="70" />
+                    </columnConstraints>
+                    <Label text="Vardas" /><TextField fx:id="usernameField" promptText="pvz. jonas" GridPane.columnIndex="1" />
+                    <Label text="Slaptažodis" GridPane.rowIndex="2" /><TextField fx:id="passwordField" promptText="****" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="Rolė" GridPane.rowIndex="5" /><ComboBox fx:id="roleBox" prefHeight="25.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+            </content>
+        </TitledPane>
+    </children>
+</VBox>

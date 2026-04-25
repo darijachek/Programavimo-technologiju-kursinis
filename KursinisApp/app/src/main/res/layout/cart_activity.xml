@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnBackCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt; Grįžti"
+        android:backgroundTint="#808080"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mano Krepšelis"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCartItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Viso: 0.00€"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnSubmitOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pateikti užsakymą"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
